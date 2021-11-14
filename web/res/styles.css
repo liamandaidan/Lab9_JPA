@@ -1,0 +1,54 @@
+/**
+    Document   : styles.css
+    Created on : 23-Oct-2021, 4:36:22 PM
+    Author     : Liam McLaughlin
+    Comments   : This is the styles sheet for our jsp (users.jsp). Included
+                 is the formating of columns + video.
+*/
+.column {
+    margin-bottom: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    color: aliceblue;
+    margin: auto;
+}
+
+.column .col-group {
+    background-color: #9dc2f659;
+    padding: 10px;
+    display: block;
+    color:black;
+}
+table, th, td {
+    border: 1px solid rgb(255, 255, 255);
+}
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}
+@media only screen and ( min-width: 1025px ) {
+    .column-wrap {
+        width: 1500px;
+        max-width: calc( 100% + 20px );
+        margin: auto;
+        overflow: hidden;
+    }
+    .column {
+        padding: 0 10px;
+        float: left;
+        text-align: center;
+    }
+    .column-wrap .one-third {
+        width: 33.33%;
+    }
+}
