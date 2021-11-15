@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import models.User;
 import dataAccess.*;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -17,12 +18,12 @@ import java.sql.SQLException;
 public class UserService
 {
     static UserDB userGetter = new UserDB();
-    public static ArrayList<User> getAllUsers()
+    public static List<User> getAllUsers()
     {
-        ArrayList<User> users = new ArrayList<>();
+        List<User> users;
         try
         {
-            users = (ArrayList)userGetter.getAllUsers();
+            users = userGetter.getAllUsers();
             if(users.isEmpty())
             {
                 System.out.println("There are no recorded users.");

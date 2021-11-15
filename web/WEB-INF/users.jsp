@@ -30,9 +30,8 @@
                         <input type="text" name="addPassword" placeholder="Password"><br>
                         <select name="addRole" id="role">
                             <c:forEach var="roleList" items="${roles}">
-                                <option name="addRole" value="${roleList.getRoleId}">${roleList.getRoleName}</option>
+                                <option name="addRole" value="${roleList.roleName}">${roleList.roleName}</option>
                             </c:forEach>
-
                         </select><br>
                         <input type="checkbox" name="addActive" id="active" value="true"> 
                         <label for="active">is Active</label><br>
@@ -83,10 +82,10 @@
                         <select name="editRole" id="role">
                             <c:forEach var="roleList" items="${roles}">
                                 <c:if test="${userInfo.role == roleList}">
-                                    <option name="editRole" value="${roleList}" selected>${roleList}</option>
+                                    <option name="editRole" value="${roleList.roleName}" selected>${roleList}</option>
                                 </c:if>
                                 <c:if test="${userInfo.role != roleList}">
-                                    <option name="editRole" value="${roleList}">${roleList}</option>
+                                    <option name="editRole" value="${roleList.roleName}">${roleList.roleName}</option>
                                 </c:if>
                             </c:forEach>
                         </select><br>
