@@ -5,7 +5,6 @@
  */
 package services;
 
-import java.util.ArrayList;
 import models.User;
 import dataAccess.*;
 import java.sql.SQLException;

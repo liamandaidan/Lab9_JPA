@@ -30,12 +30,12 @@
                         <input type="text" name="addPassword" placeholder="Password"><br>
                         <select name="addRole" id="role">
                             <c:forEach var="roleList" items="${roles}">
-                                <option name="addRole" value="${roleList.roleName}">${roleList.roleName}</option>
+                                <option name="addRole" value="${roleList.roleId}">${roleList.roleName}</option>
                             </c:forEach>
                         </select><br>
                         <input type="checkbox" name="addActive" id="active" value="true"> 
                         <label for="active">is Active</label><br>
-                        <input type="submit" value="addUser" name="submitBtn">
+                        <input type="submit" value="addUser" name="submitBtn">  
                     </form>
                     <c:if test="${invalidAttribute != null}">
                         <div>
@@ -82,17 +82,17 @@
                         <select name="editRole" id="role">
                             <c:forEach var="roleList" items="${roles}">
                                 <c:if test="${userInfo.role == roleList}">
-                                    <option name="editRole" value="${roleList.roleName}" selected>${roleList}</option>
+                                    <option name="editRole" value="${roleList.roleId}" selected>${roleList.roleName}</option>
                                 </c:if>
                                 <c:if test="${userInfo.role != roleList}">
-                                    <option name="editRole" value="${roleList.roleName}">${roleList.roleName}</option>
+                                    <option name="editRole" value="${roleList.roleId}">${roleList.roleName}</option>
                                 </c:if>
                             </c:forEach>
                         </select><br>
-                        <c:if test="${userInfo.isActive}">
+                        <c:if test="${userInfo.active}">
                             <input type="checkbox" name="editActive" id="active" value="true" checked>
                         </c:if>
-                        <c:if test="${!userInfo.isActive}">
+                        <c:if test="${!userInfo.active}">
                             <input type="checkbox" name="editActive" id="active" value="true">
                         </c:if>
 
