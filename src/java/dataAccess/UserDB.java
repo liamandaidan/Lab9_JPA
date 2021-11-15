@@ -114,6 +114,7 @@ public class UserDB {
             List<User> userToRemove = em.createNamedQuery("User.findByEmail").setParameter("email", email).getResultList();
             //we grab the first user since its a primary key
             User user = userToRemove.get(0);
+            trans.begin();
             System.out.println("The user being removed: " + user.getEmail());
             em.remove(em.merge(user));
             trans.commit();
